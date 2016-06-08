@@ -46,3 +46,4 @@ end
 gem 'mongoid'
 gem 'slim'
 gem 'react-rails'
+gem 'tzinfo-data', platforms: [:mingw, :mswin]

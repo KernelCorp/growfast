@@ -1,0 +1,77 @@
+body
+  /!-- Yandex.Metrika counter
+  javascript:
+    (function (d, w, c) {
+      (w[c] = w[c] || []).push(function () {
+        try {
+          w.yaCounter37821685 = new Ya.Metrika({
+            id: 37821685,
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            trackHash: true,
+            ecommerce: "dataLayer"
+          });
+        } catch (e) {
+        }
+      });
+
+      var n = d.getElementsByTagName("script")[0],
+              s = d.createElement("script"),
+              f = function () {
+                n.parentNode.insertBefore(s, n);
+              };
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+      if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+      } else {
+        f();
+      }
+    })(document, window, "yandex_metrika_callbacks");
+
+  noscript
+    div
+      img src="//mc.yandex.ru/watch/37821685" style="position:absolute; left:-9999px;" alt=""
+
+  /!-- /Yandex.Metrika counter
+
+  #header
+    .container
+      .logo
+        =image_tag ('landing/logo.png')
+      =link_to ('8 800 500 60 40'), 'tel:+78005006040', class: 'tel'
+  #block1
+    .container
+      .hands
+        =image_tag ('landing/hands.png')
+      .text-block
+        .text
+          | Хотите получить доступ
+            к лучшим идеями
+            бизнес-планам и скачать
+            обучающие материалы?
+        .button
+        =link_to ('Не понимаю, о чем речь'), '/'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
