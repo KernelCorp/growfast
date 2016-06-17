@@ -38,16 +38,15 @@ body
       img src="//mc.yandex.ru/watch/37821685" style="position:absolute; left:-9999px;" alt=""
 
   /!-- /Yandex.Metrika counter
-
   #header
     .container
       .logo
-        =image_tag ('landing/logo.png')
-      =link_to ('8 800 500 60 40'), 'tel:+78005006040', class: 'tel'
+        = image_tag ('landing/logo.png')
+      = link_to ('8 800 500 60 40'), 'tel:+78005006040', class: 'tel'
 
   #block1
     .container
-      =image_tag ('landing/hands.png')
+      = image_tag ('landing/hands.png')
       .text-block
         .text
           | Хотите получить доступ
@@ -55,7 +54,8 @@ body
             бизнес-планам и скачать
             обучающие материалы?
         .button
-        =link_to ('Не понимаю, о чем речь'), '/'
+        = link_to ('Не понимаю, о чем речь'), '/'
+
 
   #block2
     .container
@@ -65,43 +65,28 @@ body
         | это портал для предпринимателей <Br>и сообщество бизнес-экспертов. Мы отбираем <br>
           лучшие бизнес-идеи и масштабируем на <br>
           территории РФ и СНГ.
-      =image_tag ('landing/zoom.png')
+      = image_tag ('landing/zoom.png')
 
   #block3
     .container
       h2 Наши проекты
       .prj
-        =link_to image_tag("landing/gt_logo.png"), 'http://genetic-test.ru', target: '_blank'
+        = link_to image_tag("landing/gt_logo.png"), 'http://genetic-test.ru', target: '_blank'
       .prj
-        =link_to image_tag("landing/mg_logo.png"), 'http://mygenetics.ru', target: '_blank'
+        = link_to image_tag("landing/mg_logo.png"), 'http://mygenetics.ru', target: '_blank'
       .prj.torta
-        =link_to image_tag("landing/logo_torta.png"), 'http://dolcetorta.com', target: '_blank'
+        = link_to image_tag("landing/logo_torta.png"), 'http://dolcetorta.com', target: '_blank'
       .prj.last
-        =link_to image_tag("landing/logo_smarty.png"), 'http://smartyparty.ru', target: '_blank'
+        = link_to image_tag("landing/logo_smarty.png"), 'http://smartyparty.ru', target: '_blank'
       h2 Сертификаты
       .sert
-        =image_tag ('landing/sert.png')
+        = image_tag ('landing/sert.png')
       .logo
-        =image_tag ('landing/bottom_logo.png')
+        = image_tag ('landing/bottom_logo.png')
 
 
+.modal-window.modal-steps
+  = render partial: 'partials/modal_steps'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+coffee:
+  new @ModalShow('.button', '.modal-steps')

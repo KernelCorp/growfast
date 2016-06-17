@@ -11,6 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
+//= require dialog
+
 //= require_tree .
