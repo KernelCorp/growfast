@@ -2,19 +2,5 @@ class @ModalShow
   constructor: (selector, modal_selector) ->
     $(document).ready ->
       $(selector).on('click', ->
-        $(modal_selector).show()
+        $(modal_selector).fadeIn(300)
       )
-
-#      $(modal_selector + ' .modal-offset').on('click', ->
-#        $(modal_selector).hide()
-#        false
-#      )
-#
-      $(modal_selector + ' .close-btn').on('click', ->
-        $(modal_selector).hide()
-        false
-      )
-#
-#      $(modal_selector + ' .modal-content').on('click', ->
-#        false
-#      )

@@ -5,8 +5,11 @@
 
 
   render: ->
+    modal='.fast_inquire'
     `<div className="content">
-        <div className="close-btn"></div>
+
+    <a className="close-btn" onClick={()=>{$('.modal-window.fast_inquire').fadeOut(300)}}></a>
+    <div className="close-btn"></div>
       <p>Оставьте телефон и наши консультанты
         объяснят, как получить ТОП-10 бизнес-идей,<br />
         а также помогут подобрать лучшее для вас:</p>

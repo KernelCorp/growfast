@@ -177,7 +177,7 @@
     console.log stepTemplate
 
     `<div>
-      <div className="close-btn"></div>
+      <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
       {stepTemplate}
       {buttonsTemplate}
 
