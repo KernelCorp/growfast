@@ -3,7 +3,7 @@
     currentStep: 1
 
   buttonClick: ()->
-    unless @state.currentStep == 3
+    unless @state.currentStep == 5
       newStep =  @state.currentStep + 1
       @setState currentStep: newStep
     true
@@ -16,20 +16,6 @@
 
 
   render: ->
-    if this.state.currentStep == 2
-      buttonsTemplate = `
-          <div className="next">
-          <button onClick={this.buttonClick} className='dontknow' type="submit">{this.buttonClick} Не знаю</button>
-          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
-          </div>
-      `
-    else
-      buttonsTemplate = `
-          <div className="next">
-          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
-          </div>
-      `
-
     switch this.state.currentStep
       when 1
         stepTemplate = `
@@ -65,6 +51,11 @@
         </div>
 
         `
+        buttonsTemplate = `
+            <div className="next">
+            <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+            </div>
+        `
       when 2
         stepTemplate = `
           <div className="content">
@@ -80,6 +71,12 @@
           <input type="text" name="business_type" onChange={this.business_type}/>
 
         </div>
+        `
+        buttonsTemplate = `
+          <div className="next">
+          <button onClick={this.buttonClick} className='dontknow' type="submit">{this.buttonClick} Не знаю</button>
+          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+          </div>
         `
       when 3
         stepTemplate = `
@@ -119,6 +116,51 @@
             </ul>
           </div>
         `
+        buttonsTemplate = `
+          <div className="next">
+          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+          </div>
+        `
+
+      when 4
+        stepTemplate = `
+            <div className="content">
+              <div className="top"  >
+                Спасибо!
+              </div>
+              <p>Все уже готово для вас.<br />
+                  Куда и на чьё имя отправить бизнес идеи:</p>
+              <div className="textinputs">
+              <div className="label">Ваше имя:</div>
+              <input type="text" name="name" placeholder="Корней" onChange={this.name}/>
+              <div className="label">Ваш e-mail:</div>
+              <input type="text" name="email" placeholder="info@gmail.com" onChange={this.email}/>
+              </div>
+            </div>
+        `
+        buttonsTemplate = `
+          <div className="next">
+          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Отправить</button>
+          </div>
+        `
+
+      when 5
+        stepTemplate = `
+          <div className="content">
+          <p> подтвердите,что вы не робот.<br />
+          Введите номер телефона:</p>
+          <div className="textinputs">
+          <div className="label">Ваш телефон:</div>
+          <input type="text" name="phone" placeholder="+7(923)-88-90-34" onChange={this.name}/>
+          </div>
+          </div>
+        `
+        buttonsTemplate = `
+          <div className="next">
+          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Отправить</button>
+          </div>
+        `
+
       when 'success'
         stepTemplate = `
           <div className="content">
@@ -135,8 +177,7 @@
     console.log stepTemplate
 
     `<div>
-
-
+      <div className="close-btn"></div>
       {stepTemplate}
       {buttonsTemplate}
 

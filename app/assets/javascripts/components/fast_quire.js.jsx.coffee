@@ -13,7 +13,7 @@
       <label> Ваш телефон:</label>
       <input type="text" name="phone" placeholder="+7(932)111-14-08" onChange={this.phone_number}/>
     <div className="next">
-      <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+      <button onClick={this.buttonClick} type="submit">{this.buttonClick} Отправить</button>
     </div>
 
 

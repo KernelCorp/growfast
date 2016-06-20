@@ -9,17 +9,6 @@ $yellow_color: rgb(251, 173, 28)
   height: 100%
   background: rgba(0, 0, 0, 0.85)
 
-.close-btn
-  height: 38px
-  width: 38px
-  background-image: asset_url('landing/close.png')
-  display: inline-block
-  position: absolute
-  top: 25px
-  right: 20px
-  cursor: pointer
-
-
 
 .modal-offset
   position: fixed
@@ -28,50 +17,72 @@ $yellow_color: rgb(251, 173, 28)
   z-index: 2
 
 
-.modal-window.fast_inquire
-  .modal-content
-    position: relative
-    width: 940px
-    height: 630px
-    margin: 50px auto
-    background: white
-    z-index: 3
-    opacity: 1
-    border: 2px solid $yellow_color
-    border-radius: 10px
-    padding: 10px
+.modal-content
+  position: relative
+  width: 940px
+  height: 630px
+  margin: 50px auto
+  background: white
+  z-index: 3
+  opacity: 1
+  border: 2px solid $yellow_color
+  border-radius: 10px
+  padding: 10px
+  color: #454545
+  .top
+    font-family: 'mullerbold'
+    font-size: 36px
+    text-align: left
     color: #454545
-    #bottom
-      font-size: 27px
-    .content
-      margin-left: 90px
-      font-size: 36px
-      ul.price-list
-        list-style-type: none
-        padding-left: 0px
-      .radio + label
-        cursor: pointer
-      .radio
-        &:not(checked)
-          position: absolute
-          opacity: 0
-          + label
-            position: relative
-            /* будем позиционировать псевдочекбокс относительно label
-            padding: 0 0 0 60px
-            /* оставляем слева от label место под псевдочекбокс
-            &:before
-              content: ''
-              position: absolute
-              top: 5px
-              left: 0
-              width: 25px
-              height: 25px
-              border-radius: 10px
-              border: 3px solid $yellow_color
+    margin-top: 40px
+  ul.questions
+    text-transform: uppercase
+    font-family: 'mullerbold'
+    margin-left: -45px
+    li
+      display: inline-block
+      font-size: 32px
+      border: 3px solid $yellow_color
+      border-radius: 30px
+      padding: 10px 50px
+      color: #fbad1c
+      background-color: white
+      &.active
+        background-color: $yellow_color
+        color: white
 
+    li:first-child
+      border: 3px solid $yellow_color
+      border-radius: 30px
 
-        &:checked + label
+    li:nth-child(2)
+      margin-left: -28px
+      border-left: none
+      border-radius: 0px 30px 30px 0px
+    li:nth-child(3)
+      margin-left: -28px
+      border-left: none
+      border-radius: 0px 30px 30px 0px
+  #bottom
+    font-size: 27px
+  .content
+    margin-left: 110px
+    font-size: 32px
+    margin-top: 60px
+    ul.price-list
+      list-style-type: none
+      padding-left: 0px
+    .radio + label
+      cursor: pointer
+    .radio
+      &:not(checked)
+        position: absolute
+        opacity: 0
+        + label
+          position: relative
+          /* будем позиционировать псевдочекбокс относительно label
+          padding: 0 0 0 60px
+          /* оставляем слева от label место под псевдочекбокс
           &:before
             content: ''
             position: absolute
@@ -80,48 +91,74 @@ $yellow_color: rgb(251, 173, 28)
             width: 25px
             height: 25px
             border-radius: 10px
-            background: $yellow_color
             border: 3px solid $yellow_color
-            transition: all .2s
-          &:after
-            left: 26px
-
-      label
-        font-family: mullerbold
-        font-size: 40px
-
-      input[type="text"]
-        height: 75px
-        width: 400px
-        border-radius: 10px
-        margin-left: 20px
-        font-size: 32px
-        font-family: "mullerlight"
-        color: #454545
-        padding-left: 20px
-        margin-top: 70px
-        margin-bottom: 80px
 
 
+      &:checked + label
+        &:before
+          content: ''
+          position: absolute
+          top: 5px
+          left: 0
+          width: 25px
+          height: 25px
+          border-radius: 10px
+          background: $yellow_color
+          border: 3px solid $yellow_color
+          transition: all .2s
+        &:after
+          left: 26px
 
-    .next
-      text-align: left
-      button
-        cursor: pointer
-        font-size: 27px
-        background-color: rgb(251, 173, 28)
-        color: white
-        border-radius: 30px
-        width: 274px
-        height: 64px
-        box-shadow: 0px 5px #996515
-        font-family: MullerBold
-        text-transform: uppercase
-        display: inline-block
-        margin: 16px 0
-        &.dontknow
-          background-color: #c6c6c6
-          box-shadow: 0px 5px #7f7f7f
+    input[type="text"]
+      height: 75px
+      width: 400px
+      border-radius: 10px
+      margin-left: 150px
+      font-size: 32px
+      font-family: "mullerlight"
+      color: #454545
+      padding-left: 20px
+      margin-top: 70px
+      margin-bottom: 80px
+  .textinputs
+    margin-bottom: 30px
+    .label
+      font-family: mullerbold
+      font-size: 40px
+      width: 266px
+      display: inline-block
+    input[type="text"]
+      height: 75px
+      width: 400px
+      border-radius: 10px
+      margin-left: 80px
+      font-size: 32px
+      font-family: "mullerlight"
+      color: #454545
+      padding-left: 20px
+      margin-top: 30px
+      margin-bottom: 20px
+
+
+
+  .next
+    text-align: center
+    button
+      cursor: pointer
+      font-size: 27px
+      background-color: rgb(251, 173, 28)
+      color: white
+      border-radius: 30px
+      width: 274px
+      height: 64px
+      box-shadow: 0px 5px #996515
+      font-family: MullerBold
+      text-transform: uppercase
+      display: inline-block
+      margin: 0px 93px 40px 93px
+      &.dontknow
+        background-color: #c6c6c6
+        box-shadow: 0px 5px #7f7f7f
 
 
 
