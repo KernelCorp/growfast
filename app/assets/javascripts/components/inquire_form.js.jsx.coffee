@@ -89,7 +89,7 @@
           <li className={this.state.currentStep == 2 ? 'active' : null}>2 Вопрос</li>
           <li className={this.state.currentStep == 3 ? 'active' : null}>3 Вопрос</li>
           </ul>
-          <p>Какую сумму вы планируете инвестировать на старт
+          <p>Какую сумму вы планируете инвестировать <br />на старт
           собственного дела:</p>
 
             <ul className="price-list">
@@ -118,7 +118,7 @@
         `
         buttonsTemplate = `
           <div className="next">
-          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Готово!</button>
           </div>
         `
 
