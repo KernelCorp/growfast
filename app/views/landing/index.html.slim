@@ -54,7 +54,7 @@ body
             бизнес-планам и скачать
             обучающие материалы?
         .button
-        = link_to ('Не понимаю, о чем речь'), '/'
+        = link_to ('Не понимаю, о чем речь'), '#', class:'dontknow'
 
 
   #block2
@@ -87,6 +87,9 @@ body
 
 .modal-window.modal-steps
   = render partial: 'partials/modal_steps'
+.modal-window.fast_inquire
+  = render partial: 'partials/fast_inquire'
 
 coffee:
   new @ModalShow('.button', '.modal-steps')
+  new @ModalShow('a', '.fast_inquire')
