@@ -10,10 +10,10 @@ class @ModalShow
 #        false
 #      )
 #
-#      $(modal_selector + ' .modal-close-button').on('click', ->
-#        $(modal_selector).hide()
-#        false
-#      )
+      $(modal_selector + ' .close-btn').on('click', ->
+        $(modal_selector).hide()
+        false
+      )
 #
 #      $(modal_selector + ' .modal-content').on('click', ->
 #        false
