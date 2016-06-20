@@ -69,7 +69,9 @@ $yellow_color: rgb(251, 173, 28)
     font-size: 32px
     ul.price-list
       list-style-type: none
-
+      padding-left: 0px
+    .radio + label
+      cursor: pointer
     .radio
       &:not(checked)
         position: absolute
@@ -82,41 +84,30 @@ $yellow_color: rgb(251, 173, 28)
           &:before
             content: ''
             position: absolute
-            top: -4px
+            top: 5px
             left: 0
             width: 25px
             height: 25px
             border-radius: 10px
             border: 3px solid $yellow_color
-          &:after
-            content: ''
-            position: absolute
-            top: -2px
-            left: 2px
-            width: 22px
-            height: 22px
-            border-radius: 10px
-            background: #FFF
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
-            transition: all .2s
+
 
       &:checked + label
         &:before
-          background: #9FD468
+          content: ''
+          position: absolute
+          top: 5px
+          left: 0
+          width: 25px
+          height: 25px
+          border-radius: 10px
+          background: $yellow_color
+          border: 3px solid $yellow_color
+          transition: all .2s
         &:after
           left: 26px
-      &:focus + label:before
-        box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.5)
 
-      /* Оформление первой части чекбокса в выключенном состоянии (фон).
 
-      /* Оформление второй части чекбокса в выключенном состоянии (переключатель).
-
-      /* Меняем фон чекбокса, когда он включен.
-
-      /* Сдвигаем переключатель чекбокса, когда он включен.
-
-      /* Показываем получение фокуса.
 
   .next
     margin-left: 230px
