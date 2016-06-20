@@ -16,11 +16,25 @@
 
 
   render: ->
+    if this.state.currentStep == 2
+      buttonsTemplate = `
+          <div className="next">
+          <button onClick={this.buttonClick} className='dontknow' type="submit">{this.buttonClick} Не знаю</button>
+          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+          </div>
+      `
+    else
+      buttonsTemplate = `
+          <div className="next">
+          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+          </div>
+      `
+
     switch this.state.currentStep
       when 1
         stepTemplate = `
         <div className="content">
-          <p>На какой уровень заработка вы ориентируетесь: </p>
+          <p>На какой уровень заработка вы ориентируетесь:</p>
 
           <ul className="price-list">
             <li>
@@ -41,17 +55,44 @@
             </li>
           </ul>
         </div>
+
         `
       when 2
         stepTemplate = `
           <div className="content">
-            step 2
+            <p>В какой сфере бизнес вам наиболее интересен:</p>
+            <input type="text" name="business_type" onChange={this.business_type}/>
+
           </div>
         `
       when 3
         stepTemplate = `
           <div className="content">
-              step 3
+            <p>Какую сумму вы планируете инвестировать на старт
+            собственного дела:</p>
+
+            <ul className="price-list">
+              <li>
+              <input type="radio" name="wage_lvl" value="30" className="radio" id="radio1" checked={this.state.wageLvl == 30} onChange={this.setWageLvl}/>
+              <label htmlFor="radio1">Ищу подработку (то есть «0»)</label>
+              </li>
+              <li>
+              <input type="radio" name="wage_lvl" value="70" className="radio" id="radio2" onChange={this.setWageLvl}/>
+              <label htmlFor="radio2">от 30-50 тыс р.</label>
+              </li>
+              <li>
+              <input type="radio" name="wage_lvl" value="100" className="radio" id="radio3" onChange={this.setWageLvl}/>
+              <label htmlFor="radio3">от 50-100 тыс р.</label>
+              </li>
+              <li>
+              <input type="radio" name="wage_lvl" value="500" className="radio" id="radio4" onChange={this.setWageLvl}/>
+              <label htmlFor="radio4">от 100-500 тыс р.</label>
+              </li>
+              <li>
+              <input type="radio" name="wage_lvl" value="500" className="radio" id="radio5" onChange={this.setWageLvl}/>
+              <label htmlFor="radio5">больше 1 млн р.</label>
+              </li>
+            </ul>
           </div>
         `
       when 'success'
@@ -81,7 +122,5 @@
 
       {stepTemplate}
 
-      <div className="next">
-        <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
-      </div>
-      </div>`
+      {buttonsTemplate}
+    </div>`

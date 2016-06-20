@@ -20,6 +20,7 @@ $yellow_color: rgb(251, 173, 28)
 .modal-content
   position: relative
   width: 940px
+  height: 630px
   margin: 50px auto
   background: white
   z-index: 3
@@ -107,10 +108,20 @@ $yellow_color: rgb(251, 173, 28)
         &:after
           left: 26px
 
+    input[type="text"]
+      height: 75px
+      width: 400px
+      border-radius: 10px
+      margin-left: 150px
+      font-size: 32px
+      font-family: "mullerlight"
+      color: #454545
+      padding-left: 20px
+
 
 
   .next
-    margin-left: 230px
+    text-align: center
     button
       cursor: pointer
       font-size: 27px
@@ -124,6 +135,9 @@ $yellow_color: rgb(251, 173, 28)
       text-transform: uppercase
       display: inline-block
       margin: 16px 93px /* ? */
+      &.dontknow
+        background-color: #c6c6c6
+        box-shadow: 0px 5px #7f7f7f
 
 
 
