@@ -17,7 +17,8 @@
   render: ->
     `<div>
         <div className="top"  >
-            Тогда ответье на три вопроса, чтобы мы актуализировали идеи под ваши интересы:
+          Тогда ответьте на три вопроса, чтобы мы
+          актуализировали идеи под ваши интересы:
         </div>
         <ul className="questions">
           <li className={this.state.currentStep == 1 ? 'active' : null}>1 Вопрос</li>
@@ -27,24 +28,24 @@
 
         <div className="content">
           <p>На какой уровень заработка вы ориентируетесь:</p>
-                <ul className="price-list">
-                    <li>
-                    <input type="radio" name="wage_lvl" value="30" checked={this.state.wageLvl == 30} onChange={this.setWageLvl}/>
-            <label>от 30 тыс. р.</label>
-                </li>
-            <li>
-            <input type="radio" name="wage_lvl" value="70" onChange={this.setWageLvl}/>
-            <label>от 70 тыс. р.</label>
-                </li>
-            <li>
-            <input type="radio" name="wage_lvl" value="100" onChange={this.setWageLvl}/>
-            <label>от 100 тыс. р.</label>
-                </li>
-            <li>
-            <input type="radio" name="wage_lvl" value="500" onChange={this.setWageLvl}/>
-            <label>от 500 тыс. р.</label>
-                </li>
-            </ul>
+          <ul className="price-list">
+              <li>
+                <input type="radio" name="wage_lvl" value="30" className="radio" checked={this.state.wageLvl == 30} onChange={this.setWageLvl}/>
+                <label>от 30 тыс. р.</label>
+              </li>
+              <li>
+                <input type="radio" name="wage_lvl" value="70" className="radio" onChange={this.setWageLvl}/>
+                <label for="radio">от 70 тыс. р.</label>
+              </li>
+              <li>
+                <input type="radio" name="wage_lvl" value="100" className="radio" onChange={this.setWageLvl}/>
+                <label>от 100 тыс. р.</label>
+              </li>
+              <li>
+                <input type="radio" name="wage_lvl" value="500" className="radio" onChange={this.setWageLvl}/>
+                <label>от 500 тыс. р.</label>
+              </li>
+          </ul>
         </div>
 
         <div className="next">
