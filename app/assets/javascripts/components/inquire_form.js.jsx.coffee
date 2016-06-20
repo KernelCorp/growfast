@@ -34,6 +34,14 @@
       when 1
         stepTemplate = `
         <div className="content">
+          <div className="top"  >
+          Тогда ответьте на три вопроса, чтобы мы актуализировали идеи под ваши интересы:
+              </div>
+          <ul className="questions">
+          <li className={this.state.currentStep == 1 ? 'active' : null}>1 Вопрос</li>
+          <li className={this.state.currentStep == 2 ? 'active' : null}>2 Вопрос</li>
+          <li className={this.state.currentStep == 3 ? 'active' : null}>3 Вопрос</li>
+          </ul>
           <p>На какой уровень заработка вы ориентируетесь:</p>
 
           <ul className="price-list">
@@ -60,16 +68,32 @@
       when 2
         stepTemplate = `
           <div className="content">
-            <p>В какой сфере бизнес вам наиболее интересен:</p>
-            <input type="text" name="business_type" onChange={this.business_type}/>
+          <div className="top"  >
+          2 вопрос
+              </div>
+          <ul className="questions">
+          <li className={this.state.currentStep == 1 ? 'active' : null}>1 Вопрос</li>
+          <li className={this.state.currentStep == 2 ? 'active' : null}>2 Вопрос</li>
+          <li className={this.state.currentStep == 3 ? 'active' : null}>3 Вопрос</li>
+          </ul>
+          <p>В какой сфере бизнес вам наиболее интересен:</p>
+          <input type="text" name="business_type" onChange={this.business_type}/>
 
-          </div>
+        </div>
         `
       when 3
         stepTemplate = `
           <div className="content">
-            <p>Какую сумму вы планируете инвестировать на старт
-            собственного дела:</p>
+          <div className="top"  >
+          3 вопрос
+              </div>
+          <ul className="questions">
+          <li className={this.state.currentStep == 1 ? 'active' : null}>1 Вопрос</li>
+          <li className={this.state.currentStep == 2 ? 'active' : null}>2 Вопрос</li>
+          <li className={this.state.currentStep == 3 ? 'active' : null}>3 Вопрос</li>
+          </ul>
+          <p>Какую сумму вы планируете инвестировать на старт
+          собственного дела:</p>
 
             <ul className="price-list">
               <li>
@@ -111,16 +135,9 @@
     console.log stepTemplate
 
     `<div>
-      <div className="top"  >
-          Тогда ответьте на три вопроса, чтобы мы актуализировали идеи под ваши интересы:
-      </div>
-      <ul className="questions">
-        <li className={this.state.currentStep == 1 ? 'active' : null}>1 Вопрос</li>
-        <li className={this.state.currentStep == 2 ? 'active' : null}>2 Вопрос</li>
-        <li className={this.state.currentStep == 3 ? 'active' : null}>3 Вопрос</li>
-      </ul>
+
 
       {stepTemplate}
-
       {buttonsTemplate}
+
     </div>`
