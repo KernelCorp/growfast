@@ -24,7 +24,7 @@ class InquiresController < ApplicationController
 
   private
   def inquire_params
-    params.require(:inquire).permit(:name, :email, :phone, :business, :money)
+    params.require(:inquire).permit(:name, :email, :phone, :business, :money, :wagelvl)
   end
 
 end
