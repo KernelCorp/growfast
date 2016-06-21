@@ -159,7 +159,7 @@
               <div className="label">Ваше имя:</div>
               <input type="text" name="name" placeholder="Корней" onChange={this.setName}/>
               <div className="label">Ваш e-mail:</div>
-              <input type="text" name="email" placeholder="info@gmail.com" onChange={this.setEmail}/>
+              <input type="email" name="email" placeholder="info@gmail.com" onChange={this.setEmail}/>
               </div>
             </div>
         `
@@ -172,7 +172,7 @@
       when 5
         stepTemplate = `
           <div className="content">
-          <p> подтвердите,что вы не робот.<br />
+          <p> {this.state.name}, подтвердите, что вы не робот.<br />
           Введите номер телефона:</p>
           <div className="textinputs">
           <div className="label">Ваш телефон:</div>
@@ -189,7 +189,7 @@
       when 'success'
         stepTemplate = `
           <div className="content">
-              <p>, проверяйте почту. <br />
+              <p>{this.state.name}, проверяйте почту. <br />
               В ближайшее время мы свяжемся с вами <br />
           для объяснения дальнейших действий.</p>
           </div>`
