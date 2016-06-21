@@ -7,7 +7,7 @@ class Inquire
   field :email, type: String
   field :business, type: String
   field :money, type: String
-  field :wageLvl, type: String
+  field :wagelvl, type: String
 
 
 

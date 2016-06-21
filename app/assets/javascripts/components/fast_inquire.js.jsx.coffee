@@ -19,6 +19,7 @@
             email: '-'
             business: '-'
             money: '-'
+            wagelvl: '-'
         dataType: 'json'
         success: =>
           @setState currentStep: 'success'

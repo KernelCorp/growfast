@@ -13,7 +13,7 @@
           inquire:
             name: @state.name
             phone: @state.phone
-            wageLvl: @state.wageLvll
+            wagelvl: @state.wagelvl
             email: @state.email
             business: @state.business
             money: @state.money
@@ -28,7 +28,7 @@
 
   setWageLvl: (e) ->
 #    console.log 'switch'
-    @setState wageLvl: e.target.value
+    @setState wagelvl: e.target.value
 
   setBusinessType: (e) ->
     @setState business: e.target.value
@@ -62,19 +62,19 @@
 
           <ul className="price-list">
             <li>
-              <input type="radio" name="wage_lvl" value="30" className="radio" id="radio1" checked={this.state.wageLvl == 30} onChange={this.setWageLvl}/>
+              <input type="radio" name="wagelvl" value="от 30 тыс. р." className="radio" id="radio1" onChange={this.setWageLvl}/>
               <label htmlFor="radio1">от 30 тыс. р.</label>
             </li>
             <li>
-              <input type="radio" name="wage_lvl" value="70" className="radio" id="radio2" onChange={this.setWageLvl}/>
+              <input type="radio" name="wagelvl" value="от 70 тыс. р." className="radio" id="radio2" onChange={this.setWageLvl}/>
               <label htmlFor="radio2">от 70 тыс. р.</label>
             </li>
             <li>
-              <input type="radio" name="wage_lvl" value="100" className="radio" id="radio3" onChange={this.setWageLvl}/>
+              <input type="radio" name="wagelvl" value="от 100 тыс. р." className="radio" id="radio3" onChange={this.setWageLvl}/>
               <label htmlFor="radio3">от 100 тыс. р.</label>
             </li>
             <li>
-              <input type="radio" name="wage_lvl" value="500" className="radio" id="radio4" onChange={this.setWageLvl}/>
+              <input type="radio" name="wagelvl" value="от 500 тыс. р." className="radio" id="radio4" onChange={this.setWageLvl}/>
               <label htmlFor="radio4">от 500 тыс. р.</label>
             </li>
           </ul>
@@ -124,23 +124,23 @@
 
             <ul className="price-list">
               <li>
-              <input type="radio" name="money" value="30" className="radio" id="radio1" checked={this.state.money == 30} onChange={this.setMoney}/>
+              <input type="radio" name="money" value="Ищу подработку (то есть «0»)" className="radio" id="radio1" onChange={this.setMoney}/>
               <label htmlFor="radio1">Ищу подработку (то есть «0»)</label>
               </li>
               <li>
-              <input type="radio" name="money" value="70" className="radio" id="radio2" onChange={this.setMoney}/>
+              <input type="radio" name="money" value="от 30-50 тыс р." className="radio" id="radio2" onChange={this.setMoney}/>
               <label htmlFor="radio2">от 30-50 тыс р.</label>
               </li>
               <li>
-              <input type="radio" name="money" value="100" className="radio" id="radio3" onChange={this.setMoney}/>
+              <input type="radio" name="money" value="от 50-100 тыс р." className="radio" id="radio3" onChange={this.setMoney}/>
               <label htmlFor="radio3">от 50-100 тыс р.</label>
               </li>
               <li>
-              <input type="radio" name="money" value="500" className="radio" id="radio4" onChange={this.setMoney}/>
+              <input type="radio" name="money" value="от 100-500 тыс р." className="radio" id="radio4" onChange={this.setMoney}/>
               <label htmlFor="radio4">от 100-500 тыс р.</label>
               </li>
               <li>
-              <input type="radio" name="money" value="500" className="radio" id="radio5" onChange={this.setMoney}/>
+              <input type="radio" name="money" value="больше 1 млн р." className="radio" id="radio5" onChange={this.setMoney}/>
               <label htmlFor="radio5">больше 1 млн р.</label>
               </li>
             </ul>
