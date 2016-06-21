@@ -1,9 +1,12 @@
 @InquireForm = React.createClass
   getInitialState: ->
     currentStep: 1
+    disableSubmit: false
 
-  buttonClick: ()->
+  onSubmit: (e)->
+    e.preventDefault();
     if @state.currentStep == 5
+      @setState disableSubmit: true
       $.post
         url: @props.url
         data:
@@ -20,7 +23,8 @@
     else
       newStep =  @state.currentStep + 1
       @setState currentStep: newStep
-    true
+
+    return true
 
   setWageLvl: (e) ->
 #    console.log 'switch'
@@ -100,8 +104,8 @@
         `
         buttonsTemplate = `
           <div className="next">
-          <button onClick={this.buttonClick} className='dontknow' type="submit">{this.buttonClick} Не знаю</button>
-          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Далее</button>
+          <button className='dontknow' type="submit">{this.buttonClick} Не знаю</button>
+          <button type="submit">{this.buttonClick} Далее</button>
           </div>
         `
       when 3
@@ -156,17 +160,18 @@
               </div>
               <p>Все уже готово для вас.<br />
                   Куда и на чьё имя отправить бизнес идеи:</p>
-              <div className="textinputs">
+
+            <div className="textinputs">
               <div className="label">Ваше имя:</div>
-              <input type="text" name="name" placeholder="Корней" onChange={this.setName}/>
+              <input type="text" required name="name" placeholder="Корней" onChange={this.setName}/>
               <div className="label">Ваш e-mail:</div>
-              <input type="email" name="email" placeholder="info@gmail.com" onChange={this.setEmail}/>
+              <input type="email" required name="email" placeholder="info@gmail.com" onChange={this.setEmail}/>
               </div>
             </div>
         `
         buttonsTemplate = `
           <div className="next">
-          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Отправить</button>
+          <button type="submit">Отправить</button>
           </div>
         `
 
@@ -181,11 +186,12 @@
           </div>
           </div>
         `
-        buttonsTemplate = `
-          <div className="next">
-          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Отправить</button>
-          </div>
-        `
+        unless this.state.disableSubmit
+          buttonsTemplate = `
+            <div className="next">
+            <button type="submit" disabled={this.state.disableSubmit}>Отправить</button>
+            </div>
+          `
 
       when 'success'
         stepTemplate = `
@@ -202,11 +208,11 @@
           </div>
         `
 
-    console.log stepTemplate
 
     `<div>
       <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
-      {stepTemplate}
-      {buttonsTemplate}
-
+      <form onSubmit={this.onSubmit}>
+        {stepTemplate}
+        {buttonsTemplate}
+      </form>
     </div>`
