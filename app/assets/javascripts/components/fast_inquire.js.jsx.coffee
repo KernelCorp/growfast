@@ -26,7 +26,7 @@ getInitialState: ->
   render: ->
     switch @state.currentStep
       when 1
-        modal='.fast_inquire'
+        stepTemplate =
         `<div className="content">
 
         <a className="close-btn" onClick={()=>{$('.modal-window.fast_inquire').fadeOut(300)}}></a>
@@ -57,3 +57,11 @@ getInitialState: ->
             step not found
             </div>
         `
+
+        console.log stepTemplate
+
+      `<div>
+      <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
+      {stepTemplate}
+
+      </div>`
