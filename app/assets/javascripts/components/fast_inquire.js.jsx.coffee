@@ -48,7 +48,7 @@ getInitialState: ->
             <div className="content">
             <a className="close-btn" onClick={()=>{$('.modal-window.fast_inquire').fadeOut(300)}}></a>
             <p>В ближайшее время мы свяжемся с вами <br />
-            для объяснения дальнейших действий.
+            для объяснения дальнейших действий.</p>
             </div>`
 
       else
