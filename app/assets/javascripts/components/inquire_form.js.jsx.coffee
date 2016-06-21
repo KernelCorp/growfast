@@ -189,7 +189,9 @@
       when 'success'
         stepTemplate = `
           <div className="content">
-              success submit
+              <p>, проверяйте почту. <br />
+              В ближайшее время мы свяжемся с вами <br />
+          для объяснения дальнейших действий.
           </div>`
 
       else
