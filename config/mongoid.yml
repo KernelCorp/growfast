@@ -140,3 +140,9 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+production:
+  clients:
+    default:
+      database: growfast_production
+      hosts:
+        - localhost:27017
