@@ -1,23 +1,24 @@
 @FastInquire = React.createClass
-getInitialState: ->
-  currentStep: 1
+  getInitialState: ->
+    currentStep: 1
 
-#  buttonClick: ()->
-#    true
+  #  buttonClick: ()->
+  #    true
 
   buttonClick: ()->
-    $.post
-      url: @props.url
-      data:
-        inquire:
-          name: 'не понял о чем речь'
-          phone: @state.phone
-          email: '-'
-          business: '-'
-          money: '-'
-      dataType: 'json'
-      success: =>
-        @setState currentStep: 'success'
+    if @state.currentStep == 1
+      $.post
+        url: @props.url
+        data:
+          inquire:
+            name: 'не понял о чем речь'
+            phone: @state.phone
+            email: '-'
+            business: '-'
+            money: '-'
+        dataType: 'json'
+        success: =>
+          @setState currentStep: 'success'
     true
 
   setPhone: (e) ->
