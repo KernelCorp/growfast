@@ -49,6 +49,7 @@ group :development do
   gem 'capistrano3-puma'
 end
 
+gem 'puma'
 gem 'mongoid'
 gem 'slim'
 gem 'react-rails'
