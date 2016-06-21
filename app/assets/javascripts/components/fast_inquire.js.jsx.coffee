@@ -1,12 +1,15 @@
 @FastInquire = React.createClass
   getInitialState: ->
     currentStep: 1
+    disableSubmit: false
 
   #  buttonClick: ()->
   #    true
 
-  buttonClick: ()->
+  onSubmit: (e)->
+    e.preventDefault();
     if @state.currentStep == 1
+      @setState disableSubmit: true
       $.post
         url: @props.url
         data:
@@ -19,7 +22,7 @@
         dataType: 'json'
         success: =>
           @setState currentStep: 'success'
-    true
+    return true
 
   setPhone: (e) ->
     @setState phone: e.target.value
@@ -36,9 +39,9 @@
             объяснят, как получить ТОП-10 бизнес-идей,<br />
             а также помогут подобрать лучшее для вас:</p>
           <label> Ваш телефон:</label>
-          <input type="text" name="phone" placeholder="+7(932)111-14-08" onChange={this.setPhone}/>
+          <input type="text" required name="phone" placeholder="+7(932)111-14-08" onChange={this.setPhone}/>
         <div className="next">
-          <button onClick={this.buttonClick} type="submit">{this.buttonClick} Отправить</button>
+          <button type="submit" disabled={this.state.disableSubmit}>Отправить</button>
         </div>
 
 
@@ -62,7 +65,9 @@
         console.log stepTemplate
 
     `<div>
-    <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
-    {stepTemplate}
 
+      <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
+      <form onSubmit={this.onSubmit}>
+        {stepTemplate}
+      </form>
     </div>`
