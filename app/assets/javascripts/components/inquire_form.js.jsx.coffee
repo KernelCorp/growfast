@@ -10,6 +10,7 @@
           inquire:
             name: @state.name
             phone: @state.phone
+            wageLvl: @state.wageLvll
             email: @state.email
             business: @state.business
             money: @state.money
