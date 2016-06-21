@@ -60,8 +60,8 @@ getInitialState: ->
 
         console.log stepTemplate
 
-      `<div>
-      <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
-      {stepTemplate}
+    `<div>
+    <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
+    {stepTemplate}
 
-      </div>`
+    </div>`
