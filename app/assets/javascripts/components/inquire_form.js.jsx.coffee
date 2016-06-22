@@ -62,7 +62,7 @@
 
           <ul className="price-list">
             <li>
-              <input type="radio" name="wagelvl" value="от 30 тыс. р." className="radio" id="radio1" onChange={this.setWageLvl}/>
+              <input type="radio" name="wagelvl" value="от 30 тыс. р." className="radio" id="radio1" required onChange={this.setWageLvl}/>
               <label htmlFor="radio1">от 30 тыс. р.</label>
             </li>
             <li>
@@ -124,7 +124,7 @@
 
             <ul className="price-list">
               <li>
-              <input type="radio" name="money" value="Ищу подработку (то есть «0»)" className="radio" id="radio1" onChange={this.setMoney}/>
+              <input type="radio" name="money" value="Ищу подработку (то есть «0»)" required className="radio" id="radio1" onChange={this.setMoney}/>
               <label htmlFor="radio1">Ищу подработку (то есть «0»)</label>
               </li>
               <li>
