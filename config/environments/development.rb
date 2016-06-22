@@ -43,8 +43,8 @@ Rails.application.configure do
       address:              'smtp.yandex.ru',
       port:                  587,
       domain:               'yandex.ru',
-      user_name:            'test@kerweb.ru',
-      password:             'testpass',
+      user_name:            'growfast@kerweb.ru',
+      password:             'k8jTrdp2URJ',
       authentication:       'plain',
       enable_starttls_auto:  true  }
 end
