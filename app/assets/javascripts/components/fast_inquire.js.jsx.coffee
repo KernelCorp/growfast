@@ -8,22 +8,21 @@
 
   onSubmit: (e)->
     e.preventDefault();
-    if @state.currentStep == 1
-      @setState disableSubmit: true
-      $.post
-        url: @props.url
-        data:
-          inquire:
-            name: 'не понял о чем речь'
-            phone: @state.phone
-            email: '-'
-            business: '-'
-            money: '-'
-            wagelvl: '-'
-        dataType: 'json'
-        success: =>
-          @setState currentStep: 'success'
-    return true
+    @setState disableSubmit: true
+    $.post
+      url: @props.url
+      data:
+        inquire:
+          name: 'не понял о чем речь'
+          phone: @state.phone
+          email: '-'
+          business: '-'
+          money: '-'
+          wagelvl: '-'
+      dataType: 'json'
+      success: =>
+        @setState currentStep: 'success'
+#    return true
 
   setPhone: (e) ->
     @setState phone: e.target.value
@@ -41,13 +40,14 @@
             а также помогут подобрать лучшее для вас:</p>
           <label> Ваш телефон:</label>
           <input type="text" required name="phone" placeholder="+7(932)111-14-08" onChange={this.setPhone}/>
-        <div className="next">
-          <button type="submit" disabled={this.state.disableSubmit}>Отправить</button>
-        </div>
-
-
-
         </div>`
+        unless this.state.disableSubmit
+          buttonsTemplate = `
+            <div className="next">
+              <button type="submit" disabled={this.state.disableSubmit}>Отправить</button>
+            </div>
+          `
+
       when 'success'
         stepTemplate = `
             <div className="content">
@@ -63,6 +63,7 @@
             </div>
         `
 
+
         console.log stepTemplate
 
     `<div>
@@ -70,5 +71,6 @@
       <a className="close-btn" onClick={()=>{$('.modal-window.modal-steps').fadeOut(300)}}></a>
       <form onSubmit={this.onSubmit}>
         {stepTemplate}
+        {buttonsTemplate}
       </form>
     </div>`
