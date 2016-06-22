@@ -1,4 +1,5 @@
 class InquireMailer < ApplicationMailer
+  default from: "GrowFast <growfast@kerweb.ru>"
 
   def inquire_received(inquire)
     @inquire=inquire
