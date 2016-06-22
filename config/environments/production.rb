@@ -76,10 +76,10 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address:              'smtp.mail.ru',
+      address:              'smtp.yandex.ru',
       port:                  587,
-      domain:               'mail.ru',
-      user_name:            'manager@growfast.ru',
+      domain:               'yandex.ru',
+      user_name:            'growfast@kerweb.ru',
       password:             'k8jTrdp2URJ',
       authentication:       'plain',
       enable_starttls_auto:  true  }
